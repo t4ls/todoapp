@@ -3,6 +3,15 @@ DROP DATABASE IF EXISTS t4ls_todo;
 CREATE DATABASE t4ls_todo;
 USE t4ls_todo;
 
+# Create a basic user if it doesn't exist
+GRANT USAGE ON *.* TO 'todo'@'localhost';
+# Drop that user to guarantee a successful drop
+DROP USER 'todo'@'localhost';
+# Create the user again with a password
+CREATE USER 'todo'@'localhost' IDENTIFIED BY 'gitgud';
+# Give that user all access to the t4ls_todo database.
+GRANT ALL ON t4ls_todo.* TO 'todo'@'localhost';
+
 CREATE TABLE tasks (
 	id			int				NOT NULL		AUTO_INCREMENT,
 	description	varchar(200),
