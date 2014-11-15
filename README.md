@@ -17,6 +17,7 @@
 - Tasks are atomic. If you want a big task make it depend on smaller ones. There are no subtasks.
 - There's no room for good descriptions, so they're actually links to text files
 - Bools are efficient so visibility is based on *public* or *protected or private*. True means it is public, false and having more than one user means protected, false and having one user is private. True and having no users means keep, false and having no users means destroy.
+- Locations are all imaginary. There is no GPS data implemented yet so it will have to be built organically from people putting in their best estimates for distance.
 
 #Conventions#
 Databases, tables, columns, triggers, etc. are all lowercase_with_underscore_spacing.
