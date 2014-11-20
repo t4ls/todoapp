@@ -1,0 +1,29 @@
+/* This stylesheet is for visual styles only. Use it for fonts, colors, etc. No layout. */
+
+.container {
+    background-color: #F0F1F2;
+}
+
+p {
+    font-family: Arial;
+}
+
+a {
+
+}
+
+a:hover {
+
+}
+
+a:visited {
+
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
