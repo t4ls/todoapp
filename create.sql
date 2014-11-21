@@ -1,3 +1,5 @@
+USE t4ls_todo;
+
 CREATE TABLE tasks (
 	id			int				NOT NULL		AUTO_INCREMENT,
 	description	varchar(200),
