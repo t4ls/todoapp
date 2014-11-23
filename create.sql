@@ -1,3 +1,11 @@
+CREATE USER 'todo'@'localhost' IDENTIFIED BY 'gitgud';
+
+GRANT ALL PRIVILEGES ON *.* TO 'todo'@'localhost';
+
+CREATE DATABASE t4ls_todo;
+
+USE t4ls_todo;
+
 CREATE TABLE tasks (
 	id			int				NOT NULL		AUTO_INCREMENT,
 	description	varchar(200),
