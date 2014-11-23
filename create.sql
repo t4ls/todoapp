@@ -1,8 +1,8 @@
+CREATE DATABASE t4ls_todo;
+
 CREATE USER 'todo'@'localhost' IDENTIFIED BY 'gitgud';
 
-GRANT ALL PRIVILEGES ON *.* TO 'todo'@'localhost';
-
-CREATE DATABASE t4ls_todo;
+GRANT ALL PRIVILEGES ON t4ls_todo.* TO 'todo'@'localhost';
 
 USE t4ls_todo;
 
@@ -12,28 +12,11 @@ CREATE TABLE tasks (
 	mandatory	boolean			NOT NULL		DEFAULT 0,
 	public		boolean			NOT NULL		DEFAULT 0,
 	completed	boolean			NOT NULL		DEFAULT 0,
+	due			datetime,
+	time		datetime,
+	duration	int,
 
 	PRIMARY KEY (id)
-) ENGINE = InnoDB;
-
-# Task subtype for items with a due date.
-CREATE TABLE commitments (
-	id			int				NOT NULL,
-	due			datetime		NOT NULL,
-
-	PRIMARY KEY (id),
-	FOREIGN KEY (id) REFERENCES tasks (id) ON DELETE CASCADE
-) ENGINE = InnoDB;
-
-# Task subtype for items with a set time and duration.
-CREATE TABLE appointments (
-	id			int				NOT NULL,
-	time		datetime		NOT NULL,
-	# Duration in seconds.
-	duration	int				NOT NULL		DEFAULT 0,
-
-	PRIMARY KEY (id),
-	FOREIGN KEY (id) REFERENCES tasks (id) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
 CREATE TABLE users (
