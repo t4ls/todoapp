@@ -40,14 +40,6 @@ CREATE TABLE responsibility (
 	FOREIGN KEY (user_id) REFERENCES tasks (id) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
-CREATE TABLE locations (
-	id			int				NOT NULL,
-	name		varchar(100)	NOT NULL,
-	home		int,
-
-	PRIMARY KEY (id)
-) ENGINE = InnoDB;
-
 # Relation of tasks to tasks
 CREATE TABLE prereqs (
 	id			int				NOT NULL,
@@ -58,17 +50,4 @@ CREATE TABLE prereqs (
 	PRIMARY KEY (id, prereq_id),
 	FOREIGN KEY (id) REFERENCES tasks (id) ON DELETE CASCADE,
 	FOREIGN KEY (id) REFERENCES tasks (id) ON DELETE CASCADE
-) ENGINE = InnoDB;
-
-# Relation of locations to locations
-CREATE TABLE distances (
-	a			int				NOT NULL,
-	b			int				NOT NULL,
-	distance	decimal(6,3)	NOT NULL		DEFAULT 0,
-	# Duration in seconds.
-	time		int				NOT NULL 		DEFAULT 0,
-
-	PRIMARY KEY (a, b),
-	FOREIGN KEY (a) REFERENCES locations (id) ON DELETE CASCADE,
-	FOREIGN KEY (b) REFERENCES locations (id) ON DELETE CASCADE
 ) ENGINE = InnoDB;
