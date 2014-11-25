@@ -5,7 +5,7 @@
 }
 
 .section {
-    background-color: #07D71F;
+    background-color: #0795D7;
 }
 
 .column {
@@ -30,6 +30,10 @@
 
 .task:nth-child(2n) {
 	background-color: #cccccc;
+}
+
+.task:hover, .task:nth-child(2n):hover {
+	background-color: #186C93;
 }
 
 p {

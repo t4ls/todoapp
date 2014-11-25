@@ -5,10 +5,7 @@
 }
 
 .container {
-    max-width: 900px;
 
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .section {
@@ -22,17 +19,12 @@
 }
 
 .column {
-	width: 50%;
+	width: 49%;
 	display: inline-block;
-	padding-right: 4px;
-}
-
-.column:last-child {
-	padding-right: 0px;
+	vertical-align: top;
 }
 
 #task_details {
-	float: right;
 }
 
 #list {
@@ -127,7 +119,6 @@ input[name=input_task_duration] {
 .task {
 	padding: 0px;
 	margin-bottom: 2px;
-	width: 100%;
 }
 
 .task:last-child {
@@ -135,6 +126,6 @@ input[name=input_task_duration] {
 }
 
 .task_description {
-	display: inline-block;
+	display: inline;
 	vertical-align: top;
 }
