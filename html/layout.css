@@ -13,12 +13,33 @@
 
 .section {
 	margin-bottom: 6px;
+
 	padding: 4px;
 }
 
+.section:last-child {
+	margin-bottom: 0px;
+}
+
 .column {
-	float: left;
 	width: 50%;
+	display: inline-block;
+	padding-right: 4px;
+}
+
+.column:last-child {
+	padding-right: 0px;
+}
+
+#task_details {
+	float: right;
+}
+
+#list {
+	min-height: 200px;
+}
+
+ol, li {
 }
 
 body {
@@ -28,34 +49,92 @@ body {
 .header {
 }
 
+.footer {
+}
+
 .title {
 }
 
 #title {
-	float: left;
 }
 
 #date {
 	float: right;
 }
 
+.form_row {
+	margin-bottom: 4px;
+}
+
+.form_row:last-child {
+	margin-bottom: 0px;
+}
+
+.form_label, input {
+	display: inline;
+	vertical-align: bottom;
+	margin-right: 2px;
+}
+
+input:last-child {
+	margin-right: 0px;
+}
+
+form {
+}
+
 input {
-	display: inline-block;
 	vertical-align: top;
 }
 
-input.input {
+input[type=text], input[type=datetime], input=[type=number] {
 	height: 24px;
 }
 
-input.button {
+input[type=datetime] {
+	max-width: 150px;
+}
+
+input[type=number] {
+	max-width: 100px;
+}
+
+input[type=button], input[type=submit] {
 	height: 26px;
 }
 
-#input_task_description {
-	width: 90%;
+input[type=checkbox] {
+	position: relative;
 }
 
-#button_add_task {
-	width: 8%;
+input[name=input_task_description] {
+	width: 94%;
+}
+
+input[name=button_add_task] {
+	float: right;
+	width: 5%;
+}
+
+input[name=input_task_duration] {
+}
+
+.list {
+	margin: 0px;
+	padding: 0px;
+}
+
+.task {
+	padding: 0px;
+	margin-bottom: 2px;
+	width: 100%;
+}
+
+.task:last-child {
+	margin-bottom: 0px;
+}
+
+.task_description {
+	display: inline-block;
+	vertical-align: top;
 }

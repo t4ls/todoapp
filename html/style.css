@@ -16,6 +16,22 @@
 	font-size: 20px;
 }
 
+.list {
+	list-style-type: none;
+}
+
+#footer {
+	font-size: 12px;
+}
+
+.task {
+	background-color: #bbbbbb;
+}
+
+.task:nth-child(2n) {
+	background-color: #cccccc;
+}
+
 p {
 }
 
@@ -44,12 +60,15 @@ input {
 	font-family: Arial;
 }
 
-input.input {
+input[type=text], input[type=datetime], input[type=number], input[type=checkbox] {
 	background-color: #eeeeee;
 	color: #444444;
 	font-size: 20px;
 }
 
-input.button {
+input[type=button], input[type=submit] {
 	
+}
+
+input[type=checkbox] {
 }
