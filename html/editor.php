@@ -8,10 +8,7 @@
 	    	<div class="form_label">DUE</div><input name="input_task_date_due" type="datetime"/>
 	    	<div class="form_label">START</div><input name="input_task_date_start" type="datetime"/>
 	    	<div class="form_label">DURATION (minutes)</div><input name="input_task_duration" type="number" value="30"/>
-    	</div>
-    	<div class="form_row" id="editor_checkbox_row">
 	    	<div class="form_label">MANDATORY</div><input name="checkbox_mandatory" type="checkbox"/>
-	    	<div class="form_label">PUBLIC</div><input name="checkbox_public" type="checkbox"/>
     	</div>
     </form>
 </div>

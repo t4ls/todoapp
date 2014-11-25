@@ -8,6 +8,10 @@
     background-color: #0795D7;
 }
 
+.section, input {
+	border-radius: 4px;
+}
+
 .column {
 
 }
@@ -24,7 +28,7 @@
 	font-size: 12px;
 }
 
-.task {
+.task, .task:nth-child(2n) {
 	background-color: #bbbbbb;
 }
 
@@ -62,11 +66,15 @@ h2 {
 input {
 	border: 0;
 	font-family: Arial;
+	background-color: #eeeeee;
 }
 
 input[type=text], input[type=datetime], input[type=number], input[type=checkbox] {
-	background-color: #eeeeee;
 	color: #444444;
+	font-size: 16px;
+}
+
+input[name=input_task_description] {
 	font-size: 20px;
 }
 
