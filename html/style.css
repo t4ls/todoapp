@@ -1,11 +1,22 @@
 /* This stylesheet is for visual styles only. Use it for fonts, colors, etc. No layout. */
 
 .container {
-    background-color: #F0F1F2;
+    font-family: Arial;
+}
+
+.section {
+    background-color: #07D71F;
+}
+
+.column {
+
+}
+
+.title {
+	font-size: 20px;
 }
 
 p {
-    font-family: Arial;
 }
 
 a {
@@ -26,4 +37,19 @@ h1 {
 
 h2 {
 
+}
+
+input {
+	border: 0;
+	font-family: Arial;
+}
+
+input.input {
+	background-color: #eeeeee;
+	color: #444444;
+	font-size: 20px;
+}
+
+input.button {
+	
 }

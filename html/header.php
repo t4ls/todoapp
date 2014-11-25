@@ -1,7 +1,8 @@
 <?php
     require_once 'core.php';
 ?>
-<div class="header">
-    <div class="title" id="title"><h1><?php echo TITLE; ?></h1></div>
-    <div class="title" id="date"><h1><?php echo get_date(); ?></h1></div>
+<div id="header" class="section">
+    <span class="title" id="title"><?php echo TITLE; ?></span>
+    <span class="title" id="date"><?php echo get_date(); ?></span>
+    <div class="spacer"></div>
 </div>

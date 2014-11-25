@@ -1,21 +1,61 @@
 /* This stylesheet defines layout styles only. No colors, fonts, etc. Only sizes, padding, etc. */
 
-body {
+.spacer {
+	clear: both;
+}
+
+.container {
     max-width: 900px;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.section {
+	margin-bottom: 6px;
+	padding: 4px;
+}
+
+.column {
+	float: left;
+	width: 50%;
+}
+
+body {
+
 }
 
 .header {
-    display: flex;
 }
 
 .title {
-
 }
 
-.title #title {
-
+#title {
+	float: left;
 }
 
-.title #date {
-    
+#date {
+	float: right;
+}
+
+input {
+	display: inline-block;
+	vertical-align: top;
+}
+
+input.input {
+	height: 24px;
+}
+
+input.button {
+	height: 26px;
+}
+
+#input_task_description {
+	width: 90%;
+}
+
+#button_add_task {
+	width: 8%;
 }

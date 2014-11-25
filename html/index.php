@@ -2,13 +2,18 @@
 <?php
     require_once 'core.php'
 ?>
-<html><div class="container">
-    <head>
+<html>
+	<head>
         <title><?php echo TITLE; ?></title>
         <link rel="stylesheet" href="layout.css"/>
         <link rel="stylesheet" href="style.css"/>
-    </head>
-    <body>
-        <?php include_once 'header.php'; ?>
-    </body>
-</div></html>
+	</head>
+	<body>
+		<div class="container">
+	        <?php include_once 'header.php'; ?>
+	        <?php include_once 'editor.php'; ?>
+	        <?php include_once 'list.php'; ?>
+	        <?php include_once 'footer.php'; ?>
+		</div>
+	</body>
+</html>
