@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "testuser";
-$password = "test623";
-$dbname = "testdb";
+$username = "root";
+$password = "monkey";
+$dbname = "t4ls_todo";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -11,12 +11,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$name=$_POST["name"];
+$username=$_POST["username"];
 $email=$_POST["email"];
+$first_name=$_POST["first_name"];
+$last_name=$_POST["last_name"];
 
 
-$sql = "INSERT INTO testmail (name,email)
-VALUES ('$name','$email')";
+
+$sql = "INSERT INTO users (name, email, last_name, first_name)
+VALUES ('$name','$email','$last_name', '$first_name')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully\n";
@@ -34,26 +37,8 @@ $conn->close();
 <html>
 <body>
 
-Welcome <?php echo $_POST["name"]; ?><br>
-Your email address is: <?php echo $_POST["email"]; 
-
-
-
-
-
-$con = mysqli_connect("localhost","testuser","test623","testdb");
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-
-  echo "  Connected to MySQL"
-
-?>
-
-
-
+Welcome <?php echo $_POST["first_name"] $_POST["last_name"] ; ?><br>
+Your username is: <?php echo $_POST["username"]; ?>
 
 
 
