@@ -4,7 +4,7 @@
 do{
 	$servername = "localhost";
 	$username = "root";
-	$password = "two%milk";
+	$password = "monkey";
 	$dbname = "t4ls_todo";
 	//Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
