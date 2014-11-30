@@ -15,5 +15,7 @@
 	        <?php include_once 'list.php'; ?>
 	        <?php include_once 'footer.php'; ?>
 		</div>
+	<li><a href="http://t4ls.duckdns.org:8080/todoapp/html/newuser/">Add New User</a></li>	
+		
 	</body>
 </html>
