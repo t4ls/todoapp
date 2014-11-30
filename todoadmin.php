@@ -70,22 +70,22 @@ function rebuilddb($conn){
 
 
 	mysqli_query($conn,"CREATE TABLE users (
-	id			int 			NOT NULL		AUTO_INCREMENT,
 	username	varchar(24)		NOT NULL,
 	email		varchar(200),
 	first_name	varchar(100),
 	last_name	varchar(100),
-	PRIMARY KEY (id)
+	PRIMARY KEY (username)
 	) ENGINE = InnoDB");
 
 
 	mysqli_query($conn,"CREATE TABLE responsibility (
 	task_id		int				NOT NULL,
-	user_id		int				NOT NULL,
+	user		varchar(24)		NOT NULL,
 	owner		boolean			NOT NULL		DEFAULT 1,
-	PRIMARY KEY (task_id, user_id),
+
+	PRIMARY KEY (task_id, user),
 	FOREIGN KEY (task_id) REFERENCES tasks (id) ON DELETE CASCADE,
-	FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+	FOREIGN KEY (user) REFERENCES users (username) ON DELETE CASCADE
 	) ENGINE = InnoDB");
 
 	
