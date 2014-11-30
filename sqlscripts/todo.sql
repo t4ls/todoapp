@@ -6,7 +6,6 @@ GRANT ALL PRIVILEGES ON t4ls_todo.* TO 'todo'@'localhost';
 
 USE t4ls_todo;
 
-
 CREATE TABLE tasks (
 	id			int				NOT NULL		AUTO_INCREMENT,
 	description	varchar(200),
@@ -21,24 +20,23 @@ CREATE TABLE tasks (
 ) ENGINE = InnoDB;
 
 CREATE TABLE users (
-	id			int 			NOT NULL		AUTO_INCREMENT,
 	username	varchar(24)		NOT NULL,
 	email		varchar(200),
 	first_name	varchar(100),
 	last_name	varchar(100),
 
-	PRIMARY KEY (id)
+	PRIMARY KEY (username)
 ) ENGINE = InnoDB;
 
 # Relation of users to tasks
 CREATE TABLE responsibility (
 	task_id		int				NOT NULL,
-	user_id		int				NOT NULL,
+	user		varchar(24)		NOT NULL,
 	owner		boolean			NOT NULL		DEFAULT 1,
 
-	PRIMARY KEY (task_id, user_id),
+	PRIMARY KEY (task_id, user),
 	FOREIGN KEY (task_id) REFERENCES tasks (id) ON DELETE CASCADE,
-	FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+	FOREIGN KEY (user) REFERENCES users (id) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
 # Relation of tasks to tasks
