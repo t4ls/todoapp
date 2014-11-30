@@ -1,0 +1,86 @@
+/* This stylesheet is for visual styles only. Use it for fonts, colors, etc. No layout. */
+
+.container {
+    font-family: Arial;
+}
+
+.section {
+    background-color: #0795D7;
+}
+
+.section, input {
+	border-radius: 4px;
+}
+
+.column {
+
+}
+
+.title {
+	font-size: 20px;
+}
+
+.list {
+	list-style-type: none;
+}
+
+#footer {
+	font-size: 12px;
+}
+
+.task, .task:nth-child(2n) {
+	background-color: #bbbbbb;
+}
+
+.task:nth-child(2n) {
+	background-color: #cccccc;
+}
+
+.task:hover, .task:nth-child(2n):hover {
+	background-color: #186C93;
+}
+
+p {
+}
+
+a {
+
+}
+
+a:hover {
+
+}
+
+a:visited {
+
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+input {
+	border: 0;
+	font-family: Arial;
+	background-color: #eeeeee;
+}
+
+input[type=text], input[type=datetime], input[type=number], input[type=checkbox] {
+	color: #444444;
+	font-size: 16px;
+}
+
+input[name=input_task_description] {
+	font-size: 20px;
+}
+
+input[type=button], input[type=submit] {
+	
+}
+
+input[type=checkbox] {
+}
