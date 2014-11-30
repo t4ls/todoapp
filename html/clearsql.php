@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "testuser";
-$password = "test623";
-$dbname = "testdb";
+$username = "root";
+$password = "monkey";
+$dbname = "t4ls_todo";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "Truncate table testmail";
+$sql = "Truncate table users";
 
 if ($conn->query($sql) === TRUE) {
     echo "table cleared successfully";
