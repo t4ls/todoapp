@@ -3,7 +3,9 @@
 
 <br><br>
 <form action="usersql.php" method="post">
-Name: <input type="text" name="name"><br>
+username: <input type="text" name="username"><br>
+first name: <input type="text" name="first_name"><br>
+last name: <input type="text" name="last_name"><br>
 E-mail: <input type="text" name="email"><br>
 <input type="submit">
 </form>
