@@ -1,4 +1,6 @@
 <?php
+//based on the most current SQL script for our database "todo.sql" and "sample.sql"
+
 do{
 	$servername = "localhost";
 	$username = "root";
