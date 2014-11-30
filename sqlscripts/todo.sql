@@ -36,7 +36,7 @@ CREATE TABLE responsibility (
 
 	PRIMARY KEY (task_id, user),
 	FOREIGN KEY (task_id) REFERENCES tasks (id) ON DELETE CASCADE,
-	FOREIGN KEY (user) REFERENCES users (id) ON DELETE CASCADE
+	FOREIGN KEY (user) REFERENCES users (username) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
 # Relation of tasks to tasks
