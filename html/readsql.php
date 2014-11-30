@@ -10,13 +10,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$sql = "SELECT name, email FROM testmail";
+$sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "name: " . $row["name"]. " - email: " . $row["email"]. "<br>";
+        echo "username: " . $row["username"]. " - email: " . $row["email"]. "<br>";
     }
 } else {
     echo "0 results";
