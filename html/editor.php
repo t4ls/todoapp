@@ -1,4 +1,8 @@
 <div class="section" id="editor">
+    <form method="post" action="/newuser">
+	    <div class="form_row" id="adduser">
+	    	<input name="button_add_task" type="submit" value="Add User"/>
+    	</div>
     <form method="post" action="db/add_task.php">
 	    <div class="form_row" id="editor_description_row">
 	    	<input name="input_task_description" type="text"/>
