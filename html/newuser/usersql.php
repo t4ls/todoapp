@@ -1,3 +1,8 @@
+<html>
+<body>
+Welcome <?php echo $_POST["first_name"]; ?><br>
+Your username is: <?php echo $_POST["username"]; ?><br>
+
 <?php
 $servername = "localhost";
 $username = "root";
@@ -18,8 +23,8 @@ $last_name=$_POST["last_name"];
 
 
 
-$sql = "INSERT INTO users (name, email, last_name, first_name)
-VALUES ('$name','$email','$last_name', '$first_name')";
+$sql = "INSERT INTO users (username, email, last_name, first_name)
+VALUES ('$username','$email','$last_name', '$first_name')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully\n";
@@ -29,18 +34,6 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
-
-
-
-
-
-<html>
-<body>
-
-Welcome <?php echo $_POST["first_name"] $_POST["last_name"] ; ?><br>
-Your username is: <?php echo $_POST["username"]; ?>
-
-
 
 
 </body>
