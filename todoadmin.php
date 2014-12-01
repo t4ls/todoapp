@@ -57,15 +57,15 @@ function rebuilddb($conn){
 
 
 	mysqli_query($conn,"CREATE TABLE tasks (
-	id			int					NOT NULL		AUTO_INCREMENT,
-	description	varchar(200),	
+	id			int				NOT NULL		AUTO_INCREMENT,
+	description	varchar(200),
 	priority	enum('low','routine','pressing','urgent')			NOT NULL		DEFAULT 'routine',
-	public		boolean				NOT NULL		DEFAULT 0,
-	completed	boolean				NOT NULL		DEFAULT 0,
+	completed	boolean			NOT NULL		DEFAULT 0,
 	due			datetime,
-	time		datetime,
-	duration	int,
-	PRIMARY KEY (id)
+	owner	varchar(24)	NOT NULL,
+
+	PRIMARY KEY (id),
+	FOREIGN KEY (owner) REFERENCES users (username) ON DELETE CASCADE
 	)ENGINE = InnoDB");
 
 
@@ -108,26 +108,19 @@ VALUES ('cpg','cade@gmail.com','cade','gillem')");
 VALUES ('giggles','blake@gmail.com','blake','wrege') ");
 	mysqli_query($conn,"INSERT INTO users (username, email, first_name, last_name)
 VALUES ('goldenboy','patrick@gmail.com','patrick','amolsch') ");
-	mysqli_query($conn,"INSERT INTO tasks (description, priority, public, completed, due, time, duration )
-VALUES ('cpg explains what we are doing','pressing','1','0','2014-12-31 23:55:59','2015-12-31 23:56:59',2) ");
-	mysqli_query($conn,"INSERT INTO tasks (description, priority, public, completed, due, time, duration )
-VALUES ('goldenboy slacks off','low','1','0','2014-12-03 23:55:59','2016-12-31 23:56:59',9999) ");
+
+	mysqli_query($conn,"INSERT INTO tasks (description, priority, completed, due, owner )
+VALUES ('cpg explains what we are doing','pressing',1,'2014-12-31 23:55:59', 'cpg') ");
+	
+	mysqli_query($conn,"INSERT INTO tasks (description, priority, completed, due, owner )
+VALUES ('goldenboy slacks off','low',0,'2014-12-03 23:55:59', 'goldenboy') ");
+	
 	mysqli_query($conn,"INSERT INTO tasks (description, priority, public, completed, due, time, duration )
 VALUES ('giggles tries to be helpful and fails','routine','0','1','2013-12-31 23:55:59','2015-12-31 23:56:59',60) ");
-	mysqli_query($conn,"INSERT INTO tasks (description, due, time, duration )
-VALUES ('project is complete and we all get A+','2012-12-31 23:55:59','2017-12-31 23:56:59',1) ");
-	mysqli_query($conn,"INSERT INTO responsibility (task_id, user)
-VALUES (1, 'cpg') ");
-	mysqli_query($conn,"INSERT INTO responsibility (task_id, user)
-VALUES (2, 'goldenboy') ");
-	mysqli_query($conn,"INSERT INTO responsibility (task_id, user, owner )
-VALUES (3, 'giggles', 0) ");
-	mysqli_query($conn,"INSERT INTO responsibility (task_id, user)
-VALUES (4, 'cpg') ");
-	mysqli_query($conn,"INSERT INTO prereqs (id, prereq_id)
-VALUES (4, 1) ");
-	mysqli_query($conn,"INSERT INTO prereqs (id, prereq_id, strict)
-VALUES (2, 3, 0) ");
+	
+	mysqli_query($conn,"INSERT INTO tasks (description, priority, completed, due, owner )
+VALUES ('project is complete and we all get A+','low', 0, '2012-12-31 23:55:59', 'cpg') ");
+
 }
 
 
