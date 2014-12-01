@@ -23,6 +23,32 @@
         $set_attrib->close();
     }
 
+    function user_exists($username) {
+        global $db;
+
+        $query = $db->query("SELECT COUNT(*) FROM users WHERE username = '$username'");
+        if ($query) {
+            $results = $query->fetch_row();
+            $query->close();
+            return intval($results[0]) > 0;
+        } else {
+            return false;
+        }
+    }
+
+    function update_user($username, $first_name, $last_name, $email) {
+        global $db;
+
+        $update_user = $db->prepare(
+            "UPDATE users
+             SET first_name=?, last_name=?, email=?
+             WHERE username=?");
+
+        $update_user->bind_param('ssss', $first_name, $last_name, $email, $username);
+        $update_user->execute();
+        $update_user->close();
+    }
+
     function add_user($username) {
     	global $db;
 
@@ -34,8 +60,19 @@
     	$add_user->bind_param('s', $username);
     	$add_user->execute();
     	$add_user->close();
+    }
 
-        return $db->insert_id;
+    function update_task($id, $description, $priority, $completed, $due) {
+        global $db;
+
+        $update_task = $db->prepare(
+            "UPDATE users
+             SET description=?, priority=?, completed=?, due=?
+             WHERE id=?");
+
+        $update_task->bind_param('ssbdi', $description, $priority, $completed, $due, $id);
+        $update_task->execute();
+        $update_task->close();
     }
 
     function add_task($description) {
