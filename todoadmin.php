@@ -56,19 +56,6 @@ function rebuilddb($conn){
 	
 
 
-	mysqli_query($conn,"CREATE TABLE tasks (
-	id			int				NOT NULL		AUTO_INCREMENT,
-	description	varchar(200),
-	priority	enum('low','routine','pressing','urgent')			NOT NULL		DEFAULT 'routine',
-	completed	boolean			NOT NULL		DEFAULT 0,
-	due			datetime,
-	owner	varchar(24)	NOT NULL,
-
-	PRIMARY KEY (id),
-	FOREIGN KEY (owner) REFERENCES users (username) ON DELETE CASCADE
-	)ENGINE = InnoDB");
-
-
 	mysqli_query($conn,"CREATE TABLE users (
 	username	varchar(24)		NOT NULL,
 	email		varchar(200),
@@ -76,6 +63,19 @@ function rebuilddb($conn){
 	last_name	varchar(100),
 	PRIMARY KEY (username)
 	) ENGINE = InnoDB");
+
+
+	mysqli_query($conn,"CREATE TABLE tasks (
+	id integer NOT NULL AUTO_INCREMENT,
+	description   varchar(200),
+	priority enum('low','routine','pressing','urgent') NOT NULL   DEFAULT 'routine',
+	completed boolean NOT NULL DEFAULT 0,
+	due	  datetime,
+	owner varchar(24) NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (owner) REFERENCES users(username) ON DELETE CASCADE
+	)ENGINE = InnoDB");
+
 
 
 	mysqli_query($conn,"CREATE TABLE responsibility (
