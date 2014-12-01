@@ -14,19 +14,18 @@ VALUES ('giggles tries to be helpful and fails','routine','0','1','2013-12-31 23
 INSERT INTO tasks (description, due, time, duration )
 VALUES ('project is complete and we all get A+','2012-12-31 23:55:59','2017-12-31 23:56:59',1);
 
-INSERT INTO responsibility (task_id, user_id)
-VALUES (1, 1);
-INSERT INTO responsibility (task_id, user_id)
-VALUES (2, 3);
-INSERT INTO responsibility (task_id, user_id, owner )
-VALUES (3, 2, 0);
-INSERT INTO responsibility (task_id, user_id)
-VALUES (4, 1);
+INSERT INTO responsibility (task_id, username)
+VALUES (1, 'cpg');
+INSERT INTO responsibility (task_id, username)
+VALUES (2, 'giggles');
+INSERT INTO responsibility (task_id, username, owner )
+VALUES (3, 'goldenboy', 0);
+INSERT INTO responsibility (task_id, username)
+VALUES (4, 'cpg');
 
 
 INSERT INTO prereqs (id, prereq_id)
 VALUES (4, 1);
 INSERT INTO prereqs (id, prereq_id, strict)
 VALUES (2, 3, 0);
-
 
