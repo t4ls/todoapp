@@ -3,8 +3,6 @@
 - not sure if returning to Index.php logs the user out
 
 
-
-->So we know what pages link to where<-
 #HTML STRUCTURE#
 - Start: Index.php --> newtask/login.php
 - login.php --> newuser.php OR welcome.php
