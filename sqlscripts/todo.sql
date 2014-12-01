@@ -6,19 +6,6 @@ GRANT ALL PRIVILEGES ON t4ls_todo.* TO 'todo'@'localhost';
 
 USE t4ls_todo;
 
-CREATE TABLE tasks (
-	id			int				NOT NULL		AUTO_INCREMENT,
-	description	varchar(200),
-	priority	enum('low','routine','pressing','urgent')			NOT NULL		DEFAULT 'routine',
-	public		boolean			NOT NULL		DEFAULT 0,
-	completed	boolean			NOT NULL		DEFAULT 0,
-	due			datetime,
-	time		datetime,
-	duration	int,
-
-	PRIMARY KEY (id)
-) ENGINE = InnoDB;
-
 CREATE TABLE users (
 	username	varchar(24)		NOT NULL,
 	email		varchar(200),
@@ -26,6 +13,18 @@ CREATE TABLE users (
 	last_name	varchar(100),
 
 	PRIMARY KEY (username)
+) ENGINE = InnoDB;
+
+CREATE TABLE tasks (
+	id			int				NOT NULL		AUTO_INCREMENT,
+	description	varchar(200),
+	priority	enum('low','routine','pressing','urgent')			NOT NULL		DEFAULT 'routine',
+	completed	boolean			NOT NULL		DEFAULT 0,
+	due			datetime,
+	owner	varchar(24)	NOT NULL,
+
+	PRIMARY KEY (id),
+	FOREIGN KEY (owner) REFERENCES users (username) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
 # Relation of users to tasks
