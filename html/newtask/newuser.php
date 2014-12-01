@@ -34,6 +34,7 @@ $conn->close();
 ?>
 	        <div class="box" id="menu">
 	        	<span class="menu_item" id="menu_login_user"><a href="createtask.php">Create New Task</a></span>
+	        	<span class="menu_item" id="menu_login_user"><a href="newtask/../.."> Homepage</a></span>
 	        </div>
 
 
