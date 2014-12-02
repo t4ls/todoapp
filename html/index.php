@@ -24,7 +24,7 @@
 <html>
 	<head>
         <title><?php echo TITLE; ?></title>
-        <link rel="stylesheet" href="layout.css"/>
+        <link rel="stylesheet" href="style.css"/>
 	</head>
 	<body>
 		<div class="container" id="wrapper">
@@ -55,6 +55,4 @@
 	        </div>
 		</div>
 	</body>
-
-
 </html>
