@@ -34,13 +34,13 @@
 	        </div>
 	        <div class="box" id="menu">
 	        	<span class="menu_item" id="menu_login_user"><a href="newtask/login.php">Login</a></span>
-	        	<span class="menu_item" id="menu_login_user"><a href="ER.php">ER Diagram</a></span>
+	        	<span class="menu_item" id="menu_login_user"><a href="index.php">Homepage</a></span>
 	        </div>
 	        <div class="container" id="content">
 	        	<?php
 	        		switch (get("page")) {
 	        			case false:
-	        				include 'main.php';
+	        				include '';
 	        				break;
 
 	        			case "add_user":
@@ -54,5 +54,8 @@
 	        	?>
 	        </div>
 		</div>
+	</body>
+</html>
+	<img src="ERdiagram.png" alt="Smiley face" >
 	</body>
 </html>
