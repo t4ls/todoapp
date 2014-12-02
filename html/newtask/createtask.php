@@ -1,3 +1,21 @@
+<html>
+<head>
+<script type="text/javascript">
+<!--
+function validatetask() {
+   if ((document.addtask.description.value=="")){
+   alert ("Please add a discription");
+   return false;
+   } else {
+   return true;
+   }
+//-->
+}
+</script>
+</head>
+
+
+<body>
 <?php 
 session_start(); 
 $username = $_SESSION['username'];
@@ -5,8 +23,9 @@ echo "hello ".$username;
 ?>
 <br>
 <h3>Add Task</h3>
-<form action="task.php" method="post">
-   description: <textarea name="description" rows="5" cols="40"><?php echo $description;?></textarea>
+
+<form name ="addtask" form action="task.php" onsubmit="return validatetask();" method="post">
+   Description: <textarea name="description" rows="5" cols="40"></textarea>
    <br><br>
    
    Priority:
@@ -19,10 +38,13 @@ echo "hello ".$username;
    Due Date:
    <input class="textbox" type="date" name="duedate"/>
    <br><br>
-   <input type="submit">
+   <input type="submit" value="Submit">
+</form>
 <?php
 echo $description;
 echo $priority;
 echo $_POST['duedate']
 
 ?>
+</body>
+</html>
