@@ -24,13 +24,15 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
+    echo "<ol type=\"I\">";
     while($row = $result->fetch_assoc()) {
     	if($row["owner"]==$_SESSION['username']){
-				echo '<li class="task" id="'.$row["id"].'"">';
+				echo "<li>";
 				echo $row["description"];
-				echo '</li>';
+				echo "</li>";
 		}
     }
+    echo '</ol>';
 } else {
     echo "0 results";
 }
