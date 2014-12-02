@@ -8,33 +8,31 @@ body {
 	margin-right: auto;
 }
 
-ol, .box {
+tr, .box {
 	border-bottom: #333333 solid 3px;
 	border-radius: 3px;
 	padding: 4px;
 }
 
-ol {
+tr {
 	padding: 4px;
 
 	border-left: black solid 1px;
-	border-right: black solid 1px;
 	border-top: black solid 1px;
 }
 
-li {
+th {
 	list-style-type: none;
 	padding: 2px;
 }
 
-li:nth-child(2n), .form_row {
+tr:nth-child(2n), .form_row {
 	background-color: #cccccc;
 	padding: 2px;
 }
 
 h1 {
 	font-size: 16px;
-	border-bottom: black solid 1px
 }
 
 #date {

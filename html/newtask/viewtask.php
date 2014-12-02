@@ -8,9 +8,31 @@
 session_start(); 
 $username = $_SESSION['username'];
 echo "<p>hello ".$username."</p>";
+?>
 
 
-$servername = "localhost";
+
+<head>
+<style>
+table, th, td {
+	border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+</head>
+
+<body>
+<table style="width:100%">
+  <tr>
+    <th>Description</th>
+    <th>Priority</th>		
+    <th>Due Date</th>
+  </tr>
+<?php
+	$servername = "localhost";
 	$username = "root";
 	$password = "monkey";
 	$dbname = "t4ls_todo";
@@ -21,7 +43,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$sql = "SELECT id, description, owner
+$sql = "SELECT *
 			 FROM tasks
 			 WHERE completed = 0 
 			 ORDER BY priority DESC, due DESC
@@ -30,15 +52,16 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-    echo "<ol>";
+    echo "<tr>";
     while($row = $result->fetch_assoc()) {
     	if($row["owner"]==$_SESSION['username']){
-				echo "<li>";
-				echo $row["description"];
-				echo "</li>";
+    		$pieces = explode(" ", $row["due"]);
+			echo "<tr>";
+			echo "<td>".$row["description"]." </td> <td> ".$row["priority"]." </td> <td> ".$pieces[0] ;
+			echo "</th></tr>";
 		}
     }
-    echo '</ol>';
+    echo '</table>';
 } else {
     echo "0 results";
 }
