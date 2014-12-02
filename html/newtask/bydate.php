@@ -14,7 +14,6 @@ echo "<p>hello ".$username."</p>";
 <p class="ex">Sort By: <span class="menu_item" id="menu_login_user">
 <a href="viewtask.php"> Priority</a></span>
 <a href="bydate.php"> Due Date</a></span>
-
 </p>
 
 <head>
@@ -51,7 +50,7 @@ if ($conn->connect_error) {
 $sql = "SELECT *
 			 FROM tasks
 			 WHERE completed = 0 
-			 ORDER BY priority DESC, due DESC
+			 ORDER BY due ASC
 			 LIMIT 50";
 $result = $conn->query($sql);
 

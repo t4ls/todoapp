@@ -2,6 +2,10 @@
 	font-family: Georgia;
 }
 
+p.ex {
+    margin-left: 600px;
+}
+
 body {
 	max-width: 900px;
 	margin-left: auto;
