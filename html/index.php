@@ -33,7 +33,6 @@
 	        	<span class="title" id="date"><?php echo get_date(); ?></span>
 	        </div>
 	        <div class="box" id="menu">
-	        	<span class="menu_item" id="menu_add_user"><a href="index.php?page=add_user">Create User</a></span>
 	        	<span class="menu_item" id="menu_login_user"><a href="newtask/login.php">Login</a></span>
 	        </div>
 	        <div class="container" id="content">

@@ -1,6 +1,4 @@
-
 <html>
-
 <script> 
 function validateNew() {
     var x = document.forms["newuser"]["username"].value;
@@ -39,14 +37,18 @@ function validateNew() {
 
 }
 </script>
+<link rel="stylesheet" href="../style.css"/>
 </head>
-
-
 <body>
+<div class="box" id="menu">
+        <span class="menu_item" id="menu_login_user"><a href="createtask.php">Create New Task</a></span>
+        <span class="menu_item" id="menu_login_user"><a href="viewtask.php"> View Tasks</a></span>
+        <span class="menu_item" id="menu_login_user"><a href="newtask/../.."> Homepage</a></span>
+</div>
 <?php
-echo $_POST['description']."<br>";
-echo $_POST['priority']."<br>";
-echo $_POST['duedate']."<br>";
+echo "<div class='task'><div class='form_row'>".$_POST['description']."</div>";
+echo "<div class='form_row'".$_POST['priority']."</div>";
+echo "<div class='form_row'>".$_POST['duedate']."</div></div>";
 
 ?>
 <?php
@@ -69,7 +71,7 @@ $due = $_POST['duedate'];
 
 
 $sql = "INSERT INTO tasks (owner, description, priority, due)
-VALUES ('$owner','$description','$priority', '$due')";
+VALUES (\"$owner\",\"$description\",\"$priority\", \"$due\")";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully\n";
 } else {
@@ -77,10 +79,6 @@ if ($conn->query($sql) === TRUE) {
 }
 $conn->close();
 ?>
-	<div class="box" id="menu">
-	    <span class="menu_item" id="menu_login_user"><a href="createtask.php">Create New Task</a></span>
-		<span class="menu_item" id="menu_login_user"><a href="viewtask.php"> View Tasks</a></span>
-	    <span class="menu_item" id="menu_login_user"><a href="newtask/../.."> Homepage</a></span>
-	</div>
+	
 </body>
 <html>

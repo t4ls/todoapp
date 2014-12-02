@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <?php
 	
 	$servername = "localhost";
@@ -22,16 +21,9 @@
 echo "Current number of users: ".count($arr);
 $conn->close();
 ?>
-
-
-
-
-
-
-
 <html>
 <head>
-<br>
+<link rel="stylesheet" href="../style.css"/>
 <script>
 function validateLogin() {
     var x = document.forms["login"]["username"].value;
@@ -48,7 +40,6 @@ function validateLogin() {
 	alert("The username does not exist");
     return false;
 }
-
 
 function validateNew() {
     var x = document.forms["newuser"]["username"].value;
@@ -88,21 +79,19 @@ function validateNew() {
 }
 </script>
 </head>
-
 <body>
-<h3>Login</h3>
+<h1>Login</h1>
 <form name="login" form action="welcome.php" onsubmit="return validateLogin();" method="post">
-username: <input type="text" name="username"><br>
-<input type="submit" value="Submit">
+<div class="form_row"><span class="form_label">Username: </span><input type="text" name="username"></div>
+<div class="form_row"><input type="submit" value="Submit"></div>
 </form>
-<br><br>
 
-<h3>Create New User</h3>
+<h1>Create New User</h1>
 <form name="newuser" form action="newuser.php" onsubmit="return validateNew();" method="post">
-username: <input type="text" name="username"><br>
-first name: <input type="text" name="first_name"><br>
-last name: <input type="text" name="last_name"><br>
-E-mail: <input type="text" name="email"><br>
+	<div class="form_row"><span class="form_label">Username: </span><input type="text" name="username"></div>
+	<div class="form_row"><span class="form_label">First Name: </span><input type="text" name="first_name"></div>
+	<div class="form_row"><span class="form_label">Last Name: </span><input type="text" name="last_name"></div>
+	<div class="form_row"><span class="form_label">E-mail: </span><input type="text" name="email"></div>
 <input type="submit" value="Submit">
 
 </form>

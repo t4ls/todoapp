@@ -1,7 +1,13 @@
+<link rel="stylesheet" href="../style.css"/>
+<div class="box" id="menu">
+    <span class="menu_item" id="menu_login_user"><a href="createtask.php">Create New Task</a></span>
+    <span class="menu_item" id="menu_login_user"><a href="newtask/../.."> Homepage</a></span>
+</div>
+<div class="container" id="content">
 <?php 
 session_start(); 
 $username = $_SESSION['username'];
-echo "hello ".$username;
+echo "<p>hello ".$username."</p>";
 
 
 $servername = "localhost";
@@ -24,7 +30,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-    echo "<ol type=\"I\">";
+    echo "<ol>";
     while($row = $result->fetch_assoc()) {
     	if($row["owner"]==$_SESSION['username']){
 				echo "<li>";
@@ -38,7 +44,4 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
-	<div class="box" id="menu">
-	    <span class="menu_item" id="menu_login_user"><a href="createtask.php">Create New Task</a></span>
-	    <span class="menu_item" id="menu_login_user"><a href="newtask/../.."> Homepage</a></span>
-	</div>
+</div>
