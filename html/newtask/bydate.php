@@ -27,6 +27,7 @@ th, td {
 }
 </style>
 </head>
+<form name ="finishtask" form action="finishtask.php" onsubmit="return validatetask();" method="post">
 
 <body>
 <table style="width:100%">
@@ -61,7 +62,10 @@ if ($result->num_rows > 0) {
     	if($row["owner"]==$_SESSION['username']){
     		$pieces = explode(" ", $row["due"]);
 			echo "<tr>";
-			echo "<td>".$row["description"]." </td> <td> ".$row["priority"]." </td> <td> ".$pieces[0] ;
+            $ta=$row["id"];
+            ?><td><input type="radio" name="test" value=<?php echo $row["id"];?> >
+            <?php
+			echo " ".$row["description"]." </td> <td> ".$row["priority"]." </td> <td> ".$pieces[0] ;
 			echo "</th></tr>";
 		}
     }
@@ -71,4 +75,6 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
+      <input type="submit" value="Complete Task"/>
 </div>
+</body>

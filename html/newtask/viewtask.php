@@ -28,19 +28,20 @@ th, td {
 }
 </style>
 </head>
+<form name ="finishtask" form action="finishtask.php" onsubmit="return validatetask();" method="post">
 
 <body>
 <table style="width:100%">
   <tr>
     <th>Description</th>
-    <th>Priority</th>		
+    <th>Priority</th>       
     <th>Due Date</th>
   </tr>
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "monkey";
-	$dbname = "t4ls_todo";
+    $servername = "localhost";
+    $username = "root";
+    $password = "monkey";
+    $dbname = "t4ls_todo";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -49,22 +50,25 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 $sql = "SELECT *
-			 FROM tasks
-			 WHERE completed = 0 
-			 ORDER BY priority DESC, due DESC
-			 LIMIT 50";
+             FROM tasks
+             WHERE completed = 0 
+             ORDER BY priority DESC, due DESC
+             LIMIT 50";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     echo "<tr>";
     while($row = $result->fetch_assoc()) {
-    	if($row["owner"]==$_SESSION['username']){
-    		$pieces = explode(" ", $row["due"]);
-			echo "<tr>";
-			echo "<td>".$row["description"]." </td> <td> ".$row["priority"]." </td> <td> ".$pieces[0] ;
-			echo "</th></tr>";
-		}
+        if($row["owner"]==$_SESSION['username']){
+            $pieces = explode(" ", $row["due"]);
+            echo "<tr>";
+            $ta=$row["id"];
+            ?><td><input type="radio" name="test" value=<?php echo $row["id"];?> >
+            <?php
+            echo " ".$row["description"]." </td> <td> ".$row["priority"]." </td> <td> ".$pieces[0] ;
+            echo "</th></tr>";
+        }
     }
     echo '</table>';
 } else {
@@ -72,4 +76,6 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
+      <input type="submit" value="Complete Task"/>
 </div>
+</body>
