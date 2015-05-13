@@ -49,10 +49,10 @@ function menu(){
 
 //Rebuilds the entiredb
 function rebuilddb($conn){
-	mysqli_query($conn,"drop database t4ls_todo");
-	mysqli_query($conn,"create database t4ls_todo");
-	mysqli_query($conn,"GRANT ALL PRIVILEGES ON t4ls_todo.* TO 'todo'@'localhost'");
-	mysqli_query($conn,"use t4ls_todo");
+//	mysqli_query($conn,"drop database t4ls_todo");
+//	mysqli_query($conn,"create database t4ls_todo");
+//	mysqli_query($conn,"GRANT ALL PRIVILEGES ON t4ls_todo.* TO 'todo'@'localhost'");
+//	mysqli_query($conn,"use t4ls_todo");
 	
 
 
