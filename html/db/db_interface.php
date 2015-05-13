@@ -1,7 +1,7 @@
 <?php
     define('HOST', 'localhost');
     define('USER', 'todo');
-    define('PASSWORD', 'gitgud');
+    define('PASSWORD', 'monkey');
     define('DATABASE', 't4ls_todo');
 
     $db = new mysqli(HOST, USER, PASSWORD, DATABASE);
