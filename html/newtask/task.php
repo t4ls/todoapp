@@ -54,7 +54,7 @@ echo "<div class='form_row'>".$_POST['duedate']."</div></div>";
 <?php
 session_start();
 $servername = "localhost";
-$username = "root";
+$username = "todo";
 $password = "monkey";
 $dbname = "t4ls_todo";
 // Create connection
