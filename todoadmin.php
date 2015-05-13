@@ -3,7 +3,7 @@
 
 do{
 	$servername = "localhost";
-	$username = "root";
+	$username = "todo";
 	$password = "monkey";
 	$dbname = "t4ls_todo";
 	//Create connection
